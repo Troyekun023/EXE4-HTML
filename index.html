@@ -18,115 +18,112 @@
 
     /* HERO SECTION */
     .hero {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    background-image: url('assets/mercedes-vision-avtr.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      background-image: url('assets/mercedes-vision-avtr.webp');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
     }
 
     /* Optional dark overlay for unifying text+video contrast */
     .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
-    z-index: 0;
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
+      z-index: 0;
     }
 
     /* Logo - slightly rotated, floating */
     .hero-logo {
-    position: absolute;
-    left: 2px;
-    width: 30%;
-    transform: rotate(-8deg);
-    z-index: 0;
+      position: absolute;
+      left: 2px;
+      width: 30%;
+      transform: rotate(-8deg);
+      z-index: 0;
     }
 
     .hero-logo img {
-    width: 100%;
+      width: 100%;
     }
 
     /* Rotated text box */
     .hero-text {
-    position: absolute;
-    bottom: 3%;
-    left: 5%;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 30px;
-    border-left: 6px solid #f6e3b4;
-    border-radius: 10px;
-    backdrop-filter: blur(1px);
-    z-index: 0;
-    
+      position: absolute;
+      bottom: 3%;
+      left: 5%;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-left: 6px solid #f6e3b4;
+      border-radius: 10px;
+      backdrop-filter: blur(1px);
+      z-index: 0;
     }
 
     .hero-text h1 {
-    font-size: 3em;
-    color: #a0fcf7;
-    margin-bottom: 10px;
+      font-size: 3em;
+      color: #a0fcf7;
+      margin-bottom: 10px;
     }
 
     .hero-text p {
-    font-size: 1.2em;
-    color: #fff;
+      font-size: 1.2em;
+      color: #fff;
     }
 
     /* Tilted video box */
     .hero-video {
-    position: absolute;
-    top: 180px;
-    right: 0px;
-    width: 40%;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
-    z-index: 0;
-    border-radius: 5px;
-    overflow: hidden;
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      width: 40%;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+      z-index: 0;
+      border-radius: 5px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .hero-video:hover {
+      transform: scale(1.3);
     }
 
     .hero-video video {
-    width: 100%;
-    display: block;
-    border-radius: 2px;
+      width: 100%;
+      display: block;
+      border-radius: 2px;
     }
 
     /* CARD SECTION */
     .card-section {
-      
+      display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
       padding: 50px 10%;
       background-color: #ffffff;
     }
 
-    .top-card {
-      background: rgb(248, 240, 194);
-      border: 1px solid #f97705;
-      border-radius: 8px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
-      padding: 20px;
-      width: 280px;
-      transition: transform 0.3s ease;
+    .card-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
     }
-    
+
     .card {
       background: white;
       border: 1px solid #ddd;
       border-radius: 8px;
       box-shadow: 0 8px 16px rgba(0,0,0,0.08);
       padding: 20px;
-      width: 280px;
+      width: calc(33.333% - 20px);
       transition: transform 0.3s ease;
     }
 
-    .top-card:hover {
-      transform: translateY(10px);
-      box-shadow: 0 12px 24px rgba(101, 247, 205, 0.1);
-    }
-    
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 12px 24px rgba(0,0,0,0.1);
@@ -140,6 +137,70 @@
     .card p {
       font-size: 0.95em;
       color: #444;
+    }
+
+    /* Form Section */
+    .form-section {
+      padding: 50px 10%;
+      background-color: #f9f9f9;
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+    }
+
+    .form-container h2 {
+      margin-bottom: 20px;
+      color: #003566;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .form-group textarea {
+      height: 100px;
+    }
+
+    .submit-btn {
+      background-color: #003566;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+
+    .submit-btn:hover {
+      background-color: #002a4d;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #003566;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
     }
 
     /* Responsive Adjustments */
@@ -157,10 +218,12 @@
         margin: 20px auto;
       }
 
-      .card-section {
-        
-        align-items: center;
-        padding: 30px 5%;
+      .card {
+        width: 100%;
+      }
+
+      .form-container {
+        padding: 20px;
       }
     }
   </style>
@@ -169,7 +232,6 @@
 
   <!-- HERO SECTION -->
   <section class="hero">
-
     <!-- Logo -->
     <div class="hero-logo">
       <img src="assets/logo-enh.png" alt="Vrooom Logo">
@@ -188,28 +250,82 @@
         Your browser does not support the video tag.
       </video>
     </div>
-
   </section>
 
   <!-- CARD SECTION -->
   <section class="card-section">
-    <div class="top-card">
-      <h3>Top Speed</h3>
-      <p>Reaches up to 220mph on open track with aerodynamic support.</p>
+    <div class="card-row">
+      <div class="card">
+        <h3>Top Speed</h3>
+        <p>Reaches up to 220mph on open track with aerodynamic support.</p>
+      </div>
+      <div class="card">
+        <h3>Acceleration</h3>
+        <p>0 to 60mph in just 3.0 seconds. The surge you feel is real.</p>
+      </div>
+      <div class="card">
+        <h3>Eco Mode</h3>
+        <p>Fuel-efficient and clean in city mode — go fast and green.</p>
+      </div>
     </div>
-    <div class="top-card">
-      <h3>Acceleration</h3>
-      <p>0 to 60mph in just 3.0 seconds. The surge you feel is real.</p>
-    </div>
-    <div class="top-card">
-      <h3>Eco Mode</h3>
-      <p>Fuel-efficient and clean in city mode — go fast and green.</p>
-    </div>
-    <div class="card">
-      <h3>Smart Interior</h3>
-      <p>Includes voice assistant, panoramic HUD, memory seats, and climate AI.</p>
+    <div class="card-row">
+      <div class="card">
+        <h3>Smart Interior</h3>
+        <p>Includes voice assistant, panoramic HUD, memory seats, and climate AI.</p>
+      </div>
+      <div class="card">
+        <h3>Autonomous Driving</h3>
+        <p>Level 4 autonomous driving capability for stress-free commuting.</p>
+      </div>
+      <div class="card">
+        <h3>Entertainment System</h3>
+        <p>360-degree sound system with immersive visual experience.</p>
+      </div>
     </div>
   </section>
 
+  <!-- FORM SECTION -->
+  <section class="form-section">
+    <div class="form-container">
+      <h2>Test Drive Request</h2>
+      <form id="test-drive-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="date">Preferred Date</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Additional Comments</label>
+          <textarea id="message" name="message"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Request Test Drive</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2023 Vrooom. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Simple form validation
+    document.getElementById('test-drive-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for your request! We will contact you soon to schedule your test drive.');
+      this.reset();
+    });
+  </script>
 </body>
 </html>
